@@ -15,7 +15,6 @@ class TableJefe extends Migration
     {
         Schema::create('jefe_asig', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
             $table->string('Nombre');
             $table->string('apell_pat');
             $table->string('apell_mat');
