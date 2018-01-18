@@ -13,11 +13,12 @@ class TableCat extends Migration
      */
     public function up()
     {
-        Schema::create('categoria', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('Monitor');
+            $table->string('CPU');
             $table->timestamps();
-            $table->string(Monitor);
-            $table->String(CPU);
+
         });
     }
 
@@ -28,6 +29,6 @@ class TableCat extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoria');
+        Schema::dropIfExists('categorias');
     }
 }

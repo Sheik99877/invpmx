@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Categoria</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                height: 1h;
             }
 
             .flex-center {
@@ -79,7 +79,37 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Mi primer proyecto en Laravel 5.5
+                  <!-- @foreach($categorias as $categoria)
+                 {{ $categoria->Monitor}}
+                  @endforeach -->
+
+                  <!--Tabla de datos -->
+                  @if (count($categorias) > 0)
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              categorias
+                          </div>
+
+                          <div class="panel-body">
+                              <table class="table table-striped task-table">
+                                  <thead>
+                                      <th>Monitor</th>
+                                      <th>CPU</th>
+                                  </thead>
+                                  <tbody>
+                                  @foreach($categorias as $categoria)
+                                      <tr>
+                                          <td class="table-text"><div>{{ $categoria->Monitor }}</div></td>
+                                          <td class="table-text"><div>{{ $categoria->CPU }}</div></td>
+
+                                      </tr>
+                                  @endforeach
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  @endif
+
                 </div>
             </div>
         </div>
